@@ -1,0 +1,39 @@
+/* public/css/app.css */
+
+.navbar {
+    width: 100%;
+    background-color: #ffffff; 
+    border-bottom: 1px solid #e7e7e7;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between; /* ロゴとナビゲーションアイテムを分ける */
+    align-items: center;
+}
+
+.navbar-brand img {
+    height: 50px; /* ロゴのサイズ */
+}
+
+.custom-navbar-nav {
+    display: flex;
+}
+
+.nav-item {
+    padding: 0 15px; /* ナビゲーションアイテム間のパディング */
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #555; /* リンクの色 */
+}
+
+.nav-link:hover {
+    color: #333; /* リンクのホバー色 */
+}
+
+/* レスポンシブ対応など、他の必要なスタイルを追加 */

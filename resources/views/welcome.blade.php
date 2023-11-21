@@ -1,100 +1,82 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+{{-- resources/views/welcome.blade.php --}}
+@extends('layouts.app')
 
-        <title>Laravel</title>
+@section('content')
+<!-- resources/views/welcome.blade.php の中のヘッダー部分を更新 -->
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
+<header>
+    <div id="header-slider" class="header-slider">
+        <div class="slider-item" style="background-image: url('/images/スクリーンショット 2023-11-08 142112.png');">
+            <!-- 画像の説明文などがあればここに挿入 -->
+        </div>
+        <div class="slider-item" style="background-image: url('/images/スクリーンショット 2023-11-08 142000.png');">
+            <!-- 画像の説明文などがあればここに挿入 -->
+        </div>
+        <div class="slider-item" style="background-image: url('/images/スクリーンショット 2023-11-08 142011.png');">
+            <!-- 画像の説明文などがあればここに挿入 -->
+        </div>
+        <div class="slider-item" style="background-image: url('/images/スクリーンショット 2023-11-08 142021.png');">
+            <!-- 画像の説明文などがあればここに挿入 -->
+        </div>
+        <div class="slider-item" style="background-image: url('/images/スクリーンショット 2023-11-08 142106.png');">
+            <!-- 画像の説明文などがあればここに挿入 -->
+        </div>
+    </div>
+</header>
 
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+@include('components.navbar')
+<section id="search-bar">
+    <div class="container">
+        <form action="{{ route('search') }}" method="GET" class="search-form">
+            <div class="form-row">
+                <div class="col">
+                    <label for="check-in">チェックイン日 - チェックアウト日</label>
+                    <input type="text" class="form-control" id="check-in" name="check_in" placeholder="日付を選択">
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="col">
+                    <label for="guests">大人2名様</label>
+                    <select class="form-control" id="guests" name="adults">
+                        <option>1人</option>
+                        <option selected>2人</option>
+                        <option>3人</option>
+                        <option>4人</option>
+                        <!-- その他のオプション -->
+                    </select>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://vapor.laravel.com">Vapor</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col">
+                    <label for="children">子供の年齢</label>
+                    <select class="form-control" id="children" name="children">
+                        <option>1歳未満</option>
+                        <option selected>1歳</option>
+                        <option>2歳</option>
+                        <!-- その他のオプション -->
+                    </select>
+                </div>
+                <div class="col">
+                    <label for="search">&nbsp;</label>
+                    <button type="submit" class="btn btn-primary form-control">予約内容の確認・キャンセル</button>
                 </div>
             </div>
-        </div>
-    </body>
-</html>
+        </form>
+    </div>
+</section>
+
+<main>
+    <section id="topix">
+        <h2>Nonokaze TOPIX</h2>
+        <!-- トピックスの内容 -->
+    </section>
+
+    <section id="gallery">
+        <h2>Featured</h2>
+        <!-- 施設やサービスのギャラリー -->
+    </section>
+
+    <!-- 他のセクション -->
+</main>
+
+<footer>
+    <!-- フッターの情報 -->
+</footer>
+@endsection

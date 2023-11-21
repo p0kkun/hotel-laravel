@@ -1,0 +1,49 @@
+/* スタイルシート（public/css/app.css など） */
+
+.header-slider {
+    width: 100%;
+    height: 400px; /* お好みで調整してください */
+    overflow: hidden;
+    position: relative;
+}
+
+.slider-item {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    transition: opacity 1s ease-in-out;
+    opacity: 0;
+}
+
+/* 最初のスライダーアイテムだけを表示 */
+.slider-item:first-child {
+    opacity: 1;
+}
+/* public/css/app.css */
+
+#search-bar .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.search-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.search-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3490dc;
+    color: white;
+    cursor: pointer;
+}
+.custom-container{
+    margin-top: 90px;
+}
